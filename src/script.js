@@ -69,6 +69,16 @@
                 status: 1
             });
         }
+
+        static systemBrowser(data, message) {
+            const url = data.url || "";
+            cordova.InAppBrowser.open(url, "_system");
+
+            message.send({
+                action: data.action,
+                status: 1
+            });
+        }
     }
 
     class AppMessage {
